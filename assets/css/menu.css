@@ -11,18 +11,13 @@
     /* Colores Pokédex */
     --primary-color: #DC0A2D;
     --primary-dark: #A40821;
-    --secondary-color: #FFCB05;
+    --secondary-color: #ffffff;
     --bg-dark: #1a1a2e;
     --bg-light: #f5f5f5;
     --text-white: #ffffff;
     --text-dark: #333333;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 8px 15px rgba(220, 10, 45, 0.3);
-    
-    /* Transiciones */
-    --transition-speed: 0.3s;
-    
-    /* Tamaños */
     --nav-height: 70px;
     --container-max-width: 1200px;
 }
@@ -32,7 +27,7 @@
    =================================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: fixed white;
     min-height: 100vh;
     padding-top: var(--nav-height);
 }
@@ -51,22 +46,6 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: var(--shadow);
-    transition: all var(--transition-speed) ease;
-}
-
-.navbar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(255, 255, 255, 0.1) 50%, 
-        transparent 100%);
-    animation: shine 3s infinite;
 }
 
 @keyframes shine {
@@ -103,26 +82,10 @@ body {
     position: relative;
 }
 
-.nav-logo::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: var(--secondary-color);
-    transition: width var(--transition-speed) ease;
-}
-
 .nav-logo:hover {
     transform: scale(1.05);
     color: var(--secondary-color);
 }
-
-.nav-logo:hover::after {
-    width: 100%;
-}
-
 /* ===================================
     NAV-MENU - LISTA DE NAVEGACIÓN
    =================================== */
@@ -131,13 +94,6 @@ body {
     list-style: none;
     gap: 0.5rem;
     align-items: center;
-}
-
-/* ===================================
-    NAV-ITEM - ELEMENTO INDIVIDUAL
-   =================================== */
-.nav-item {
-    position: relative;
 }
 
 /* ===================================
@@ -154,19 +110,6 @@ body {
     transition: all var(--transition-speed) ease;
     position: relative;
     overflow: hidden;
-}
-
-.nav-link::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
 }
 
 .nav-link:hover::before {
@@ -194,7 +137,7 @@ body {
 /* ===================================
     RESPONSIVE - TABLETS (max-width: 768px)
    =================================== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     .nav-container {
         padding: 0 1rem;
     }
@@ -258,40 +201,5 @@ body {
     
     body {
         padding-top: 150px;
-    }
-}
-
-/* ===================================
-   ANIMACIONES ADICIONALES
-   =================================== */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.navbar {
-    animation: fadeInDown 0.5s ease-out;
-}
-
-/* ===================================
-    ACCESIBILIDAD
-   =================================== */
-.nav-link:focus {
-    outline: 3px solid var(--secondary-color);
-    outline-offset: 3px;
-}
-
-/* Mejora para usuarios que prefieren movimiento reducido */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
     }
 }
