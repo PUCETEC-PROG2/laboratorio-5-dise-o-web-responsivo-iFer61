@@ -36,11 +36,11 @@ body {
     NAVBAR - CONTENEDOR PRINCIPAL
    =================================== */
 .navbar {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: rgb(138, 138, 138);
     height: var(--nav-height);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: fixed;
     position: fixed;
     top: 0;
     left: 0;
@@ -48,10 +48,6 @@ body {
     z-index: 1000;
 }
 
-@keyframes shine {
-    0%, 100% { transform: translateX(-100%); }
-    50% { transform: translateX(100%); }
-}
 
 /* ===================================
     NAV-CONTAINER - CONTENEDOR INTERNO
@@ -70,22 +66,14 @@ body {
 /* ===================================
     NAV-LOGO - LOGO DE LA APLICACIÓN
    =================================== */
-.nav-logo {
-    color: var(--text-white);
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.logo-image-only {
+    height: 120px;
+    width: auto;
     cursor: pointer;
-    transition: all var(--transition-speed) ease;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    position: relative;
+    transition: transform 0.3s ease;
 }
 
-.nav-logo:hover {
-    transform: scale(1.05);
-    color: var(--secondary-color);
-}
+
 /* ===================================
     NAV-MENU - LISTA DE NAVEGACIÓN
    =================================== */
