@@ -28,7 +28,7 @@
    =================================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: fixed white;
+    background: fixed #ffb3af;
     min-height: 100vh;
     padding-top: var(--nav-height);
 }
